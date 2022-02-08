@@ -7,17 +7,17 @@ employee_file = csv.reader(infile, delimiter=',')
 #to skip a line if the file contains a header record
 next(employee_file)
 
-outfile = open('employee_bonus.csv', 'w')
-
 for record in employee_file:
-    Name = 
-    Bonus = 
-    Salary = 
+    ID = record[0]
+    first_name = record[1]
+    last_name = record[2]
+    salary = float(record[3])
+    bonus = float(record[4])
+    bonus_amt = bonus * salary
+    total_pay = bonus_amt + salary 
+
+    print(ID, first_name, last_name, salary, bonus, round(bonus_amt,1), total_pay)
+
+   
 
     
-
-
-for record in customer_file:
-    Name = record[1] + ' ' + record[2]
-    Country = record[4]
-    outfile.write(Name + ' ' + Country + '\n')
